@@ -18,6 +18,13 @@ everything : toolchain
 	make -C buildroot
 	make -C mini-rv32ima testkern
 
+clean : 
+	make -C hello_linux clean
+	make -C buildroot clean
+	rm -rf buildroot
+	make -C packages/coremark clean
+	make -C mini-rv32ima clean
+
 testdlimage :
 	make -C mini-rv32ima testdlimage
 
